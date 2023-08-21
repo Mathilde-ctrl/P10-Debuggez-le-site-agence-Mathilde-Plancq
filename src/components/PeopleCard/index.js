@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import "./style.scss";
+import "./_peopleCard.scss";
 
 const PeopleCard = ({ imageSrc, imageAlt, position, name }) => (
     <div className="PeopleCard">

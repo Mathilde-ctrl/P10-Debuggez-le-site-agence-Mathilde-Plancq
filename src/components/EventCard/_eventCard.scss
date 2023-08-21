@@ -1,4 +1,4 @@
-@import "src/colors.scss";
+@use "../../colors.scss";
 
 .EventCard {
   position: relative;
@@ -40,7 +40,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    background-color: $primary;
+    background-color: colors.$primary;
     font-size: 10px;
     width: 99px;
     height: 28px;
@@ -54,7 +54,7 @@
     overflow: hidden;
   }
   &__descriptionContainer {
-    color: $black;
+    color: colors.$black;
     font-size: 15px;
     display: flex;
     flex-direction: column;

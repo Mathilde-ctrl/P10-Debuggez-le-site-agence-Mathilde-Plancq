@@ -1,4 +1,4 @@
-@import "src/colors.scss";
+@use "../../colors.scss";
 
 header {
   height: 112px;
@@ -23,7 +23,7 @@ nav {
       padding: 0;
       a {
         text-decoration: none;
-        color: $black;
+        color: colors.$black;
       }
     }
     padding-right: 50px;

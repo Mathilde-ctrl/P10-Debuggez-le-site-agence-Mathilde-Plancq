@@ -1,4 +1,4 @@
-@import "src/colors.scss";
+@use "../../colors.scss";
 
 .ServiceCard {
   width: 363px;
@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   &__textContainer {
-    color: $black;
+    color: colors.$black;
     font-size: 15px;
     display: flex;
     flex-direction: column;

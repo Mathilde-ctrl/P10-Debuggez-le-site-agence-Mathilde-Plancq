@@ -1,10 +1,10 @@
-@import "src/colors.scss";
+@use "../../colors.scss";
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $primary;
+  background-color: colors.$primary;
 }
 
 .ServicesContainer {
@@ -33,7 +33,7 @@ main {
 }
 
 .EventsContainer {
-  background-color: $primary;
+  background-color: colors.$primary;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -95,7 +95,7 @@ main {
 .Title {
   font-size: 50px;
   font-family: "Space Grotesk", sans-serif;
-  color: $primary;
+  color: colors.$primary;
   margin: 0;
   margin-top: 64px;
 }
@@ -183,7 +183,7 @@ footer {
     text-align: center;
     margin-bottom: 16px;
     font-weight: 600;
-    color: $primary;
+    color: colors.$primary;
   }
   p {
     max-width: 360px;

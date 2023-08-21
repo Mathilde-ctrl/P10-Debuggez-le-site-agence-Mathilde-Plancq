@@ -1,4 +1,4 @@
-@import "src/colors.scss";
+@use "../../colors.scss";
 
 .ModalEvent {
   font-family: "Manrope", sans-serif;
@@ -14,7 +14,7 @@
   }
   &__title {
     position: absolute;
-    background-color: $primary;
+    background-color: colors.$primary;
     color: white;
     left: 0;
     right: 0;

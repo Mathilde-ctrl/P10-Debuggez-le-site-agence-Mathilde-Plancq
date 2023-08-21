@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useData } from "../../contexts/DataContext";
 import { getMonth } from "../../helpers/Date";
 
-import "./style.scss";
+import "./_slider.scss";
 
 const Slider = () => {
   const { data } = useData();
@@ -57,3 +57,4 @@ const Slider = () => {
 };
 
 export default Slider;
+ 

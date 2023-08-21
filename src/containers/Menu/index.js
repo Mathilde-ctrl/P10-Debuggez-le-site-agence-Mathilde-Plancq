@@ -2,7 +2,7 @@
 import Button from "../../components/Button";
 import Logo from "../../components/Logo";
 
-import "./style.scss";
+import "./_menu.scss";
 
 const Menu = () => (
   <nav>

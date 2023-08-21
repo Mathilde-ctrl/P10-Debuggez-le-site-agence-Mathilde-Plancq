@@ -1,4 +1,4 @@
-@import "src/colors.scss";
+@use "../../colors.scss";
 
 .SlideCardList {
   position: relative;
@@ -36,14 +36,14 @@
         width: 16px;
         height: 16px;
         min-width: 0;
-        color: $primary;
+        color: colors.$primary;
       }
     }
     &__description {
       left: 0;
       bottom: 50px;
       width: 857px;
-      background-color: $primary;
+      background-color: colors.$primary;
       color: white;
       border-radius: 8px;
       display: flex;

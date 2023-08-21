@@ -1,4 +1,4 @@
-@import "src/colors.scss";
+@use "../../colors.scss";
 
 .PeopleCard {
   position: relative;
@@ -18,7 +18,7 @@
     overflow: hidden;
   }
   &__descriptionContainer {
-    color: $black;
+    color: colors.$black;
     font-size: 15px;
     display: flex;
     flex-direction: column;
@@ -35,6 +35,6 @@
     text-transform: capitalize;
     font-size: 20px;
     font-weight: bold;
-    color: $primary;
+    color: colors.$primary;
   }
 }

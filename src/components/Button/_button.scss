@@ -1,7 +1,7 @@
-@import "src/colors.scss";
+@use "../../colors.scss";
 
 .Button {
-  background: $primary;
+  background: colors.$primary;
   background: linear-gradient(
     100deg,
     rgba(101, 63, 255, 1) 0%,

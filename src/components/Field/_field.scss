@@ -1,9 +1,9 @@
-@import "src/colors.scss";
+@use "../../colors.scss";
 
 .inputField {
   display: flex;
   flex-direction: column;
-  color: $black;
+  color: colors.$black;
   align-items: flex-start;
   margin: 8px;
   span {
@@ -20,9 +20,9 @@ input {
   border-radius: 4px;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-  color: $black;
+  color: colors.$black;
   &:focus {
-    color: $primary;
+    color: colors.$primary;
   }
 
   font-family: "Manrope", sans-serif;
@@ -35,9 +35,9 @@ textarea {
   border-radius: 4px;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
-  color: $black;
+  color: colors.$black;
   &:focus {
-    color: $primary;
+    color: colors.$primary;
   }
 
   font-family: "Manrope", sans-serif;

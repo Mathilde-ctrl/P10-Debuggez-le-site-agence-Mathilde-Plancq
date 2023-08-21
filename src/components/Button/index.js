@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import "./style.scss";
+import "./_button.scss";
 
 export const BUTTON_TYPES = {
   DEFAULT: 1,
