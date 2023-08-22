@@ -109,7 +109,7 @@ const Page = () => {
               onSuccess={() => setIsOpened(true)}
               onError={() => null}
             />
-          )}
+          )} 
         </Modal>
       </div>
     </main>
