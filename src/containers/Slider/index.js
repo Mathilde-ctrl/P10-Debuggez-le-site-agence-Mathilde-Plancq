@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { useData } from "../../contexts/DataContext";
 import { getMonth } from "../../helpers/Date";
 
+
 import "./_slider.scss";
 /**
  * Composant Slider 
  */
 function Slider(){
+
   /**
    * @useData hook pour accéder aux données dans DataContext
    */
@@ -36,13 +38,12 @@ function Slider(){
    * @function nextCard - Appelle la fonction setTimeout()
    * 
    * Change la valeur de la variable d'état index après 5s
-   * byDateDesc is equal to 3 since 3 object in .focus but need to be -1 to start same way as index that start 0
+   * byDateDesc is equal to 3 since 3 object in .focus but need to be -1 to stop at the right time.
    */
   const nextCard = () => {
-    setTimeout(
-      () => setIndex(index < byDateDesc.length -1 ? index + 1 : 0),
-      5000
-    );
+    setTimeout(() => {
+      setIndex(index < data.focus.length -1 ? index + 1 : 0);
+    }, 5000);
   };
 
   /**
@@ -55,17 +56,15 @@ function Slider(){
 
   return (
     <div className="SlideCardList">
-      {data?.focus.map((focus, idx) => (
-        <>
+      
+      {byDateDesc?.map((focus, idx) => {
+        const isDisplayed = index === idx;
+        return (
           <div
             key={focus.title}
-            className={`SlideCard SlideCard--${
-              index === idx ? "display" : "hide"
-            }`}
+            className={`SlideCard SlideCard--${isDisplayed ? "display" : "hide"}`}
           >
-            {console.log(data)}
             <img src={focus.cover} alt="forum" />
-            
             <div className="SlideCard__descriptionContainer">
               <div className="SlideCard__description">
                 <h3>{focus.title}</h3>
@@ -74,61 +73,24 @@ function Slider(){
               </div>
             </div>
           </div>
-          <div className="SlideCard__paginationContainer">
-            <div className="SlideCard__pagination">
-              {byDateDesc.map((_, radioIdx) => (
-                <input
-                  key={`${focus.id}`}
-                  type="radio"
-                  name="radio-button"
-                  checked={index === radioIdx}
-                />
-              ))}
-            </div>
-          </div>
-        </>
-      ))}
+        );
+      })}
+      <div className="SlideCard__paginationContainer">
+        <div className="SlideCard__pagination">
+          {byDateDesc?.map((focus, radioIdx) => (
+            <input
+              key={focus.date}
+              type="radio"
+              name="radio-button"
+              checked={index === radioIdx}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
+  
 };
 
 export default Slider;
  
-
-/**
- * <div className="SlideCardList">
-      {byDateDesc?.map((event, idx) => (
-        <>
-          <div
-            key={event.title}
-            className={`SlideCard SlideCard--${
-              index === idx ? "display" : "hide"
-            }`}
-          >
-            <img src={event.cover} alt="forum" />
-            <div className="SlideCard__descriptionContainer">
-              <div className="SlideCard__description">
-                <h3>{event.title}</h3>
-                <p>{event.description}</p>
-                <div>{getMonth(new Date(event.date))}</div>
-              </div>
-            </div>
-          </div>
-          <div className="SlideCard__paginationContainer">
-            <div className="SlideCard__pagination">
-              {byDateDesc.map((_, radioIdx) => (
-                <input
-                  key={`${event.id}`}
-                  type="radio"
-                  name="radio-button"
-                  checked={index === radioIdx}
-                />
-              ))}
-            </div>
-          </div>
-        </>
-      ))}
-    </div>
- * 
- * 
- */
