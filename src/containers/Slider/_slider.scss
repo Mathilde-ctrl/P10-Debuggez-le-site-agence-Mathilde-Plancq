@@ -14,9 +14,12 @@
     &--hide {
       opacity: 0;
     }
-    &--display {
-      animation: slide 1s forwards;
-    }
+    
+    /*  &--display {
+       animation: slide 1s forwards;
+      }
+    */
+
     &__descriptionContainer {
       position: absolute;
       left: 0;
@@ -78,6 +81,7 @@
   }
 }
 
+/**
 @keyframes slide {
   0% {
     transform: translateX(100%);
@@ -86,3 +90,4 @@
     transform: translateX(0%);
   }
 }
+*/
