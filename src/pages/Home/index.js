@@ -5,7 +5,7 @@ import PeopleCard from "../../components/PeopleCard";
 
 import "./home_page.scss";
 import EventList from "../../containers/Events";
-import Slider from "../../containers/Slider";
+import Slider from "../../containers/Slider/slider";
 import Logo from "../../components/Logo";
 import Icon from "../../components/Icon";
 import Form from "../../containers/Form";

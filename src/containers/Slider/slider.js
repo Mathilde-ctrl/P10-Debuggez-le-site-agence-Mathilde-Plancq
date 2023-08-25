@@ -42,7 +42,9 @@ function Slider(){
    */
   const nextCard = () => {
     setTimeout(() => {
-      setIndex(index < data.focus.length -1 ? index + 1 : 0);
+      if (byDateDesc && byDateDesc.length > 0) {
+        setIndex(index < byDateDesc.length - 1 ? index + 1 : 0);
+      }
     }, 5000);
   };
 
