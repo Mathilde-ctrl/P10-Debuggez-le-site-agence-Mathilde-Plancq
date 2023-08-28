@@ -4,6 +4,7 @@ import { getMonth } from "../../helpers/Date";
 
 
 import "./_slider.scss";
+
 /**
  * Composant Slider 
  */
@@ -18,7 +19,8 @@ function Slider(){
    * @variable index - variable d'état ayant pour valeur initial 0 
    * @function setIndex - met à jour l'état de la variable. 
    */
-  const [index, setIndex] = useState(0);
+   const [index, setIndex] = useState(0);
+
 
   /**
    * @variable byDateDesc - Trie les évenements par date décroissante
@@ -47,6 +49,7 @@ function Slider(){
       }
     }, 5000);
   };
+   
 
   /**
    * @useEffect = hook 
@@ -55,7 +58,7 @@ function Slider(){
   useEffect(() => {
     nextCard();
   });
-
+   
   return (
     <div className="SlideCardList">
       
@@ -85,6 +88,7 @@ function Slider(){
               type="radio"
               name="radio-button"
               checked={index === radioIdx}
+              onChange={()=> setIndex(radioIdx)}
             />
           ))}
         </div>
