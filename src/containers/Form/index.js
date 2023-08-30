@@ -4,28 +4,46 @@ import Field, { FIELD_TYPES } from "../../components/Field";
 import Select from "../../components/Select";
 import Button, { BUTTON_TYPES } from "../../components/Button";
 
-const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 1000); })
+/**
+ * @function mockContactApi - Retourne une promesse qui se résout avec succés après 900ms.
+ * Permet de simuler une récupération de données depuis un serveur. 
+ */
+const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 900); })
 
+/**
+ * @function Form - Créer un formulaire. 
+ * @param({onSuccess, onError}) - fonctions appelés en cas de succès ou d'erreur  
+ */
 const Form = ({ onSuccess, onError }) => {
+  /**
+   * @variable sending - Variable d'état initié à fasle. 
+   * Permet de suivre si le formulaire est en cours d'envoie. 
+   */
   const [sending, setSending] = useState(false);
-  // const [submitButtonText, setSubmitButtonText] = useState("Envoyer");
+  /**
+   * @variable sendContact - Reçoit pour valeur le résultat de l'appel à la fonction useCallback. 
+   * Lorsque l'on appelle sendContact la fonction useCallback sera executé. 
+   * 
+   * @fonction useCallback - 2 arguments (onSuccess, onError)
+   */
   const sendContact = useCallback(
+    // fonction fléché anonyme et asynchrome
     async (evt) => {
       evt.preventDefault();
+      // Formulaire en cours d'envoie
       setSending(true);
-      // setSubmitButtonText("En cours");
-      // We try to call mockContactApi
+      // We try to call mockContactApi. 
+      // Gère les erreurs potentielles
       try {
         await mockContactApi();
-        setSending(false);
         onSuccess();
-        // setSubmitButtonText("Envoyer")
-         
+        setSending(false);  
       } catch (err) {
         setSending(false);
         onError(err);
       }
     },
+    // Liste de dépendance : détermine quand la fonction doit être réexécutée
     [onSuccess, onError]
   );
   return (
@@ -40,15 +58,12 @@ const Form = ({ onSuccess, onError }) => {
             label="Personel / Entreprise"
             type="large"
             titleEmpty
-            
           />
           <Field placeholder="" label="Email" type={FIELD_TYPES.EMAIL} required />
           <Button type={BUTTON_TYPES.SUBMIT} disabled={sending} >
-            {sending ? "En cours" : "Envoyer"}
+            {sending ? "En cours" : "Envoyer" }
+            
           </Button>
-          
-          
-
         </div>
         <div className="col">
           <Field

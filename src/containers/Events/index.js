@@ -11,7 +11,11 @@ import "./_events.scss";
 
 function EventList() {
 
+  /**
+   * @variable PER_PAGE - détermine le nombre d'évent visible par page
+   */
   const PER_PAGE = 9;
+
   /**
    * @useData hook pour accéder aux données dans DataContext
    */
@@ -30,7 +34,8 @@ function EventList() {
   const [currentPage, setCurrentPage] = useState(1);
 
   /**
-   * @variable filteredEvents - Récupère les données dans  un tableau et les filtres. 
+   * @variable filteredEvents - Filtre les événements en fonction de la valeur type.  
+   * Si data est null ou undefined alors un tableau vide est utilisé. 
    */
   const filteredEvents = (data?.events || []).filter((event) => {
     // Si !type est falsy ( type est initier dans un useState avec aucune valeur)
@@ -48,9 +53,10 @@ function EventList() {
    * 
    * Créer une copie du tableau avec ... 
    * méthode .sort en comparaison avec 2 éléments
+   * Du plus récent au plus ancien. 
    */
   const sortedEvents = [...filteredEvents].sort((a, b) => {
-    if (a.date < b.date) {
+    if (a.date > b.date) {
       return -1;
     }
     return 0; 

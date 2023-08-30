@@ -14,16 +14,14 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
    const {data} = useData()
-   console.log("data:", data)
    const lastEvents = data?.events.sort((a, b) => {
     if (a.date > b.date) {
       return -1;
     }
     return 0;
   });
-  console.log("lastEvents: ", lastEvents)
   const lastEvent = lastEvents && lastEvents[0];
-  console.log("lastEvent: ", lastEvent)
+
   return <>
     <header>
       <Menu />
@@ -126,16 +124,18 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        {lastEvent && (
-          <EventCard
-          imageSrc={lastEvent?.cover} 
-          title={lastEvent?.title}
-          date={new Date(lastEvent?.date)}
-          small
-          label="boom"
-          />
-        )}
-          
+        <a href="#nos-realisations" className="lastEvent--small">
+          {lastEvent && (
+            <EventCard
+            imageSrc={lastEvent?.cover} 
+            title={lastEvent?.title}
+            date={new Date(lastEvent?.date)}
+            small
+            label="boom"
+            />
+          )}
+        </a>
+        
         
         
       </div>

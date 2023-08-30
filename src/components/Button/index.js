@@ -21,7 +21,7 @@ const Button = ({ title, onClick, type, disabled, children }) => {
         >
           {children}
         </button>
-      );
+      ); 
     case BUTTON_TYPES.SUBMIT:
       return (
         <input
