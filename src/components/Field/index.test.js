@@ -1,5 +1,6 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import Field, { FIELD_TYPES } from "./index";
+import Form from "../../containers/Form"; 
 
 describe("When a field is created", () => {
   it("a name is set on the field", () => {
@@ -62,3 +63,22 @@ describe("When a field is created", () => {
     });
   });
 });
+
+
+
+describe("The fields component", () => {
+  it("Can not be sumbited if they are empty", async() => {
+    render(<Form />);
+    const form = screen.getByTestId("form-empty")
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+    })
+    fireEvent.submit(form);
+
+    const textButton = screen.getByTestId("button-test-id")
+
+    expect(textButton.textContent).not.toContain("En cours")
+    
+  })
+})

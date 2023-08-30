@@ -10,22 +10,25 @@ import Button, { BUTTON_TYPES } from "../../components/Button";
  */
 const mockContactApi = () => new Promise((resolve) => { setTimeout(resolve, 900); })
 
+
 /**
  * @function Form - Créer un formulaire. 
  * @param({onSuccess, onError}) - fonctions appelés en cas de succès ou d'erreur  
  */
 const Form = ({ onSuccess, onError }) => {
+
   /**
-   * @variable sending - Variable d'état initié à fasle. 
-   * Permet de suivre si le formulaire est en cours d'envoie. 
-   */
+    * @variable sending - Variable d'état initié à fasle. 
+    * Permet de suivre si le formulaire est en cours d'envoie. 
+    */
   const [sending, setSending] = useState(false);
+
   /**
-   * @variable sendContact - Reçoit pour valeur le résultat de l'appel à la fonction useCallback. 
-   * Lorsque l'on appelle sendContact la fonction useCallback sera executé. 
-   * 
-   * @fonction useCallback - 2 arguments (onSuccess, onError)
-   */
+    * @variable sendContact - Reçoit pour valeur le résultat de l'appel à la fonction useCallback. 
+    * Lorsque l'on appelle sendContact la fonction useCallback sera executé. 
+    * 
+    * @fonction useCallback - 2 arguments (onSuccess, onError)
+    */
   const sendContact = useCallback(
     // fonction fléché anonyme et asynchrome
     async (evt) => {
@@ -47,7 +50,7 @@ const Form = ({ onSuccess, onError }) => {
     [onSuccess, onError]
   );
   return (
-    <form onSubmit={sendContact}>
+    <form onSubmit={sendContact} data-testid="form-empty">
       <div className="row">
         <div className="col">
           <Field placeholder="" label="Nom" required/>

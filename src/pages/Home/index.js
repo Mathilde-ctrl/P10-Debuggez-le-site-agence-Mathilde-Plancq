@@ -31,7 +31,7 @@ const Page = () => {
         <Slider />
       </section>
       <section className="ServicesContainer" id="nos-services">
-        <h2 className="Title">Nos services</h2>
+        <h2 className="Title" data-testid="section-nos-services" >Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
         <div className="ListContainer">
           <ServiceCard imageSrc="/images/priscilla-du-preez-Q7wGvnbuwj0-unsplash1.png">
@@ -59,12 +59,12 @@ const Page = () => {
           </ServiceCard>
         </div>
       </section>
-      <section className="EventsContainer" id="nos-realisations">
-        <h2 className="Title">Nos réalisations</h2>
+      <section className="EventsContainer" id="nos-realisations" data-testid="events-list" >
+        <h2 className="Title" data-testid="section-nos-realisations" >Nos réalisations</h2>
         <EventList />
       </section>
-      <section className="PeoplesContainer" id="notre-equipe">
-        <h2 className="Title">Notre équipe</h2>
+      <section className="PeoplesContainer" id="notre-equipe" data-testid="people-list" >
+        <h2 className="Title" data-testid="section-notre-equipe" >Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
         <div className="ListContainer">
           <PeopleCard
@@ -100,7 +100,7 @@ const Page = () => {
         </div>
       </section>
       <div className="FormContainer" id="contact">
-        <h2 className="Title">Contact</h2>
+        <h2 className="Title" data-testid="section-contact">Contact</h2>
         <Modal
           Content={
             <div className="ModalMessage--success">
@@ -121,10 +121,10 @@ const Page = () => {
         </Modal>
       </div>
     </main>
-    <footer className="row">
+    <footer className="row" data-testid="footer" >
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        <a href="#nos-realisations" className="lastEvent--small">
+        <a href="#nos-realisations" className="lastEvent--small" data-testid="last-event" >
           {lastEvent && (
             <EventCard
             imageSrc={lastEvent?.cover} 
