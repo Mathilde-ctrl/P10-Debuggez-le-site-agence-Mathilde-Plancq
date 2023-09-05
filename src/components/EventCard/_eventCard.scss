@@ -8,6 +8,7 @@
   &--small {
     width: 274px;
     height: 190px;
+    margin: 0;
     .EventCard__imageContainer {
       height: 126px;
       min-height: auto;
@@ -81,4 +82,7 @@
 
 .lastEvent--small{
   text-decoration: none;
+  height: 190px ;
+  width: 274px ;
+  
 }

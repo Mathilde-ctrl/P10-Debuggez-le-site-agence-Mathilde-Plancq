@@ -30,8 +30,8 @@ const Page = () => {
       <section className="SliderContainer">
         <Slider />
       </section>
-      <section className="ServicesContainer" id="nos-services">
-        <h2 className="Title" data-testid="section-nos-services" >Nos services</h2>
+      <section className="ServicesContainer" id="nos-services" data-testid="section-nos-services" >
+        <h2 className="Title"  >Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
         <div className="ListContainer">
           <ServiceCard imageSrc="/images/priscilla-du-preez-Q7wGvnbuwj0-unsplash1.png">

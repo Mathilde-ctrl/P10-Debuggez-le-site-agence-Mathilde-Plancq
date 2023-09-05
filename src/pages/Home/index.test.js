@@ -58,27 +58,30 @@ describe("When a page is created", () => {
 
 // Test de vérification des liens menus.
 
+
 describe("When a user select a link in the menu", () => {
-  it("can navigate to 'Nos Services' section", ()=>{
+  it("can navigate to 'Nos Services' section", async ()=>{
     render(<Home />);
     const servicesSection = screen.getByTestId("link-nos-services");
     expect(servicesSection).toBeInTheDocument();
 
     fireEvent.click(servicesSection);
     const servicesTitle = screen.getByTestId("section-nos-services");
-    expect(servicesTitle).toBeVisible();
+    
+    expect(servicesTitle).toBeVisible();   
   })
 
   it("can navigate to 'Nos réalisations' section", ()=>{
     render(<Home />);
     const nosrealisations = screen.getByTestId("link-nos-realisations");
     expect(nosrealisations).toBeInTheDocument();
-
+    
     fireEvent.click(nosrealisations);
     const realisationTitle = screen.getByTestId("section-nos-realisations");
     expect(realisationTitle).toBeVisible();
+    
   })
-
+ 
   it("can navigate to 'Notre équipe' section", ()=>{
     render(<Home />);
     const notreEquipe = screen.getByTestId("link-notre-equipe");

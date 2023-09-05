@@ -61,10 +61,9 @@ function Slider(){
    
   return (
     <div className="SlideCardList">
-      
       {byDateDesc?.map((focus, idx) => {
         const isDisplayed = index === idx;
-        return (
+         return (
           <div
             key={focus.title}
             className={`SlideCard SlideCard--${isDisplayed ? "display" : "hide"}`}
@@ -78,7 +77,7 @@ function Slider(){
               </div>
             </div>
           </div>
-        );
+         );
       })}
       <div className="SlideCard__paginationContainer">
         <div className="SlideCard__pagination">
@@ -88,7 +87,7 @@ function Slider(){
               type="radio"
               name="radio-button"
               checked={index === radioIdx}
-              onChange={()=> setIndex(radioIdx)}
+              readOnly
             />
           ))}
         </div>
